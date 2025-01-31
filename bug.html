@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+
+  <script>
+    // Incorrect attempt to access the element using getElementsByTagName
+    const divElement = document.getElementsByTagName('div')[0];
+    divElement.innerHTML = "This text has been changed."; //This will work correctly
+
+    //Incorrect attempt to change the content of an element by accessing it by id, using a method that's not supported by the element's type
+    document.getElementById('myDiv').textcontent = "This should not change.";
+  </script>
+</body>
+</html>
